@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="stylesheet" href="/CSS/global.css">
+    <link rel="stylesheet" href="/CSS/header.css">
+    <link rel="stylesheet" href="/CSS/main-created.css">
+    <link rel="stylesheet" href="/CSS/main-Edit.css">
+    <link rel="stylesheet" href="/CSS/main-preview.css">
+    <link rel="stylesheet" href="/CSS/media.css">
+    <link rel="stylesheet" href="/CSS/modaltrash.css">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js" ></script>
+    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+
+    <script src="/JS/client.js" defer></script>
+    <script src="/JS/cardlistposition.js" defer></script>
+    <script src="/JS/interaction.js" defer></script>
+
+    <title>Document</title>
+</head>
+<body>
+    <header id="<%- userData.id %>">
+        <section class="user_header-father container">
+            <section class="user_header-logo">
+                <img src="" alt="Logo">
+            </section>
+            <section class="user_header-user">
+                <p><%- userData.Name %></p>
+                <button class="cicle">user</button>
+            </section>
+        </section>
+    </header>
+
+    <main>
+        <section class="user_main-father container">
+            <section class="user_main-linkCreationArea">
+                <section class="user_main-linkCreationEdit">
+                    <h1>Crie seu link</h1>
+                    <input type="text" class="linkCreation-nameLink inputCreatLink">
+                    <input type="text" class="linkCreation-urlLink inputCreatLink">
+                    <div class="linkCreationEdit-uploadImgCreate">
+                        <input  type="file" name="" id="">
+                        <button>Criar</button>
+                    </div>
+                </section>
+                
+                    <ul class="user_main-readyLinksArea">
+                    <% linksData.forEach(function(obj)  {%>
+                        <li class="list-link-Container red" id="<%- obj.id %>">
+                            <div class="list-link-Container-iconDrag">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-grip-vertical" viewBox="0 0 16 16">
+                                <path d="M7 2a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zM7 5a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zM7 8a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm-3 3a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm-3 3a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
+                              </svg></div>
+                            <div class="list-link-Container-nameLink">
+                                <%- obj.nameLink %></div>
+                            <div class="list-link-Container-trash">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
+                                    <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"/>
+                                </svg>
+                            </div>
+                        </li>
+            
+                <%  })  %>
+                </ul>
+            </section>
+            
+            <section class="user_main-view red">
+               
+            </section>
+            
+            
+        </section>
+    </main>
+
+    <section class="modalTrash ">
+        <div class="modalTrash-text">Deseja deletar link</div>
+        <div class="modalTrash-confirm">
+            <button class="TrashNo">Cancelar</button>
+            <button class="deletcard">sim</button>
+        </div>
+    </section>
+</body>
+</html>
+
