@@ -1,0 +1,11 @@
+@media (max-width: 930px) {
+    .user_main-linkCreationArea{
+        align-items: center;
+    }
+    .user_main-father{
+        justify-content: center;
+    }
+    .user_main-view{
+       display: none;
+   }
+}

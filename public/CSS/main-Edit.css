@@ -1,0 +1,42 @@
+.user_main-readyLinksArea{
+    width: 90%;
+    max-width: 500px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 8px;
+}
+
+.list-link-Container{
+    width: 100%;
+    height: 50px;
+    list-style-type:none;
+    display: flex;
+    margin-top: 8px;
+    border-radius: 8px;
+    
+}
+
+.list-link-Container:active{
+    animation: linkdrag 0.2ms ease-in-out forwards alternate;
+}
+
+@keyframes linkdrag {
+    0% {box-shadow: 0px 0px 0px 0px grey;}
+    100% {box-shadow: 0px 0px 6px 2px grey;}
+}
+
+.list-link-Container-iconDrag, .list-link-Container-trash{
+    width: 40px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.list-link-Container-nameLink{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: calc(100% - 80px);
+}

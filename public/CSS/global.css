@@ -1,0 +1,39 @@
+*{
+    padding: 0;
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+.container{
+    width: 90%;
+    max-width: 1200px;
+}
+
+header, main{
+    display: flex;
+    justify-content: center;
+}
+
+header{
+    margin-bottom: 10px;
+}
+
+main{
+    height: calc(90vh - 81px);
+    min-height: 600px;
+}
+
+.user_main-father{
+    display: flex;
+
+}
+
+.cicle{
+    border-radius: 50%;
+}
+
+.red{
+    background-color: red;
+}
