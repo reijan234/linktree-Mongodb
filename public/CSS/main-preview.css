@@ -1,3 +1,13 @@
 .user_main-view{
     width: calc(100% - 500px);
+    position: relative;
+    z-index: -1;
+}
+
+.modelFixed-phone{
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    bottom: 0;
 }

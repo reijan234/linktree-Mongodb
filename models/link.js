@@ -1,13 +1,14 @@
 const mongoose = require('mongoose');
+const { index } = require('../src/controllers/LinkController');
 
 const link = new mongoose.Schema({
     
-    idUser:{
-        type:Object,
+    IdUser:{
+        type: Object,
         required: true,
     },
     nameLink: {
-        type:String,
+        type: String,
         required: true,
     },
     urlLink: {
@@ -16,7 +17,11 @@ const link = new mongoose.Schema({
     },
     ImageLink: {
         type: String,
-        required: true,
+        required: false,
+    },
+    index: {
+        type: Number,
+        required: true
     }
     
 })

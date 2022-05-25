@@ -1,9 +1,9 @@
 *{
     padding: 0;
     margin: 0;
-    border: 0;
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
+    border: hidden;
 }
 
 .container{
@@ -16,24 +16,74 @@ header, main{
     justify-content: center;
 }
 
-header{
-    margin-bottom: 10px;
-}
-
-main{
-    height: calc(90vh - 81px);
-    min-height: 600px;
+.color-white{
+    background-color: #f4f6f9;
+    min-height: calc(100vh - 90px);
 }
 
 .user_main-father{
     display: flex;
-
 }
 
-.cicle{
+.circle{
     border-radius: 50%;
 }
 
-.red{
+.borderRed{
+    border: red solid 2px;
+}
+
+
+ul{
+    width: 90%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 8px;
+}
+
+.d-align_Jcontent-center{
+    align-items: center;
+    justify-content: center;
+}
+
+.b-radius-25px{
+    border-radius: 25px !important;
+}
+
+.p-relative{
+    position: relative;
+}
+
+.p-absolute{
+    position: absolute;
+}
+
+.m-top-5rem{
+    margin-top: 5rem !important;
+}
+
+.img-user{
+    width: 120px;
+    height: 120px;
+}
+
+.back{
     background-color: red;
+}
+
+.btn{
+    padding: 12px 14px;
+    border-radius: 8px;
+}
+
+.z-in{
+    z-index: -9999;
+}
+
+.all-windoll{
+    width: 100%;
+    height: 100vh;
 }

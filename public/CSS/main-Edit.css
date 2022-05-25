@@ -1,20 +1,34 @@
 .user_main-readyLinksArea{
-    width: 90%;
     max-width: 500px;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    margin-top: 8px;
+}
+
+.user_main-readyLinksArea :nth-last-child(1){
+    margin-bottom: 30px;
+}
+
+.user_main-readyLinksArea-firstChild{
+    list-style-type:none;
+    width: 100%;
+    height: 0;
+}
+
+.icon-public{
+    margin-left: 4px;
+    width: 45px;
+    height: 45px;
+    left: 0px;
 }
 
 .list-link-Container{
     width: 100%;
     height: 50px;
+    max-height: 50px;
     list-style-type:none;
     display: flex;
-    margin-top: 8px;
+    margin-top: 10px;
     border-radius: 8px;
-    
+    background-color: white;
+    box-shadow: 0 0 5px 0px grey;
 }
 
 .list-link-Container:active{
@@ -29,6 +43,7 @@
 .list-link-Container-iconDrag, .list-link-Container-trash{
     width: 40px;
     height: 100%;
+    margin-bottom: 0px !important;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -39,4 +54,8 @@
     align-items: center;
     justify-content: center;
     width: calc(100% - 80px);
+}
+
+.material-icons{
+    margin-bottom: 0px !important;
 }

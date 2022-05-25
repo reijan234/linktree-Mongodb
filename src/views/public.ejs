@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+
+    <link rel="stylesheet" href="/CSS/global.css">
+    <link rel="stylesheet" href="/CSS/main-Edit.css">
+    
+    <script src="/JS/public.js" defer></script>
+
+    <title>Document</title>
+</head>
+<body>
+    <header class="m-top-5rem">
+        
+        <% if(dataUser.ImgUser != undefined){ %>
+                <img class="img-user" src="../../assets/ImageUser/3ecefc74-f8ed-4167-953c-2d4caadabd6c-novoapp-4.png" alt="">
+        <% } %>
+
+    </header>
+
+    <main>
+        <ul class="container">
+        <% dataLink.forEach( obj =>  {%>
+            <li class="list-link-Container p-relative d-align_Jcontent-center b-radius-25px" id="<%- obj.id %>">
+                <% if(obj.ImageLink != undefined) {%>
+
+                    <img class="icon-public p-absolute b-radius-25px" src="../../assets/iconsLinks/<%- obj.ImageLink %>" alt="">
+
+                <% } %>    
+                <p><%- obj.nameLink %> </p>
+                <a  href="<%- obj.urlLink %> " style="display:none"></a>
+            </li>
+
+        <%  })  %>
+
+        
+        </ul>
+    </main>
+</body>
+</html>

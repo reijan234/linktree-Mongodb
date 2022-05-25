@@ -1,9 +1,75 @@
 .modalTrash{
-    visibility: visible;
-    opacity: 1;
+    visibility: hidden;
+    opacity: 0;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    background-color: rgba(0, 0, 0, 0.322);
+    display: grid;
+    grid-template-columns: auto 350px auto;
+    grid-template-rows: auto 100px auto;
+    grid-template-areas: 
+    'heard heard heard'
+    'left2 modelDelete right2'
+    'foote foote foote'
+    ;
 }
 
 .trashOpen{
     visibility: visible;
     opacity: 1;
+}
+
+.modalTrash-father{
+    width: 100%;
+    height: 100px;
+    background-color: white;
+    border-radius: 8px;
+    grid-area: modelDelete;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.nullTrash-hearder{
+    grid-area: heard;
+}
+
+.nullTrash-left{
+    grid-area: left2;
+}
+
+.nullTrash-right{
+    grid-area: right2;
+}
+
+.nullTrash-footer{
+    grid-area: foote;
+}
+
+.modalTrash-text{
+    margin-top: 20px;
+}
+
+.modalTrash-confirm{
+    width: 100%;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.buttonTrash{
+    padding: 10px 15px;
+    border-radius: 8px;
+    color: white;
+}
+
+.deletcard{
+    margin-left: 5px;
+    background-color: rgb(105, 105, 243);
+    
 }

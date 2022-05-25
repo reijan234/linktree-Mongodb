@@ -1,27 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
 
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 
+    <link rel="stylesheet" href="/CSS/GoogleIcons.css">
     <link rel="stylesheet" href="/CSS/global.css">
     <link rel="stylesheet" href="/CSS/header.css">
     <link rel="stylesheet" href="/CSS/main-created.css">
     <link rel="stylesheet" href="/CSS/main-Edit.css">
     <link rel="stylesheet" href="/CSS/main-preview.css">
-    <link rel="stylesheet" href="/CSS/media.css">
     <link rel="stylesheet" href="/CSS/modaltrash.css">
+    <link rel="stylesheet" href="/CSS/modalEditLink.css">
+    <link rel="stylesheet" href="/CSS/media.css">
+    <link rel="stylesheet" href="/CSS/Modal-menu.css">
+    <link rel="stylesheet" href="/CSS/styleModal.css">
 
-    <script src="https://code.jquery.com/jquery-3.6.0.js" ></script>
-    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+    <script src="/JS/createdLink.js" defer></script>
+    <script src="/JS/createModal_Edit.js" defer></script>
+    <script src="/JS/deleteLink.js" defer></script>
+    <script src="/JS/updateLink.js" defer></script>
+    <script src="/JS/currentIndex.js" defer></script>
 
-    <script src="/JS/client.js" defer></script>
     <script src="/JS/cardlistposition.js" defer></script>
     <script src="/JS/interaction.js" defer></script>
 
@@ -33,61 +42,98 @@
             <section class="user_header-logo">
                 <img src="" alt="Logo">
             </section>
+            <!-- <section class="user_header-menu">
+               <button class="btn">Home</button>
+               <button class="style-modal btn">Estilização</button>
+            </section> -->
+
             <section class="user_header-user">
                 <p><%- userData.Name %></p>
-                <button class="cicle">user</button>
             </section>
         </section>
     </header>
 
-    <main>
+    
+    <main class="color-white">
+       
         <section class="user_main-father container">
             <section class="user_main-linkCreationArea">
                 <section class="user_main-linkCreationEdit">
                     <h1>Crie seu link</h1>
-                    <input type="text" class="linkCreation-nameLink inputCreatLink">
-                    <input type="text" class="linkCreation-urlLink inputCreatLink">
+                    <input type="text" class="linkCreation-nameLink inputCreatLink" placeholder="Nome do link">
+                    <input type="text" class="linkCreation-urlLink inputCreatLink" placeholder="https://www.example.com/">
                     <div class="linkCreationEdit-uploadImgCreate">
-                        <input  type="file" name="" id="">
-                        <button>Criar</button>
+                        <input  class="uploadImg" type="file" id="upload">
+                        <label class="uploadImg-label" for="upload">
+                            <img id="imageCreat" style="display: none;" alt="">
+                            <p class="imagePreview-name" style="display: none;"></p>
+                            <span class="material-icons imagePreview-remove" style="display: none;">
+                                close
+                                </span>
+                            <span class="material-icons uploadImg-label-icon">
+                                file_download
+                            </span>
+                            <p class="uploadImg-label-nameUpload">Upload</p>
+                            
+                        </label>
+                            
+                        <button class="creat uploadImgCreate-button">Criar</button>
+                        
                     </div>
                 </section>
                 
                     <ul class="user_main-readyLinksArea">
-                    <% linksData.forEach(function(obj)  {%>
-                        <li class="list-link-Container red" id="<%- obj.id %>">
+                    <% linksData.forEach( obj =>  {%>
+                        <li class="list-link-Container" id="<%- obj.id %>">
                             <div class="list-link-Container-iconDrag">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-grip-vertical" viewBox="0 0 16 16">
-                                <path d="M7 2a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zM7 5a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zM7 8a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm-3 3a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm-3 3a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
-                              </svg></div>
+                                <span class="material-icons">
+                                    drag_indicator
+                                </span>
+                            </div>
                             <div class="list-link-Container-nameLink">
                                 <%- obj.nameLink %></div>
                             <div class="list-link-Container-trash">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
-                                    <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"/>
-                                </svg>
+                                <span class="material-icons">
+                                    delete
+                                    </span>
                             </div>
                         </li>
             
                 <%  })  %>
+                       
                 </ul>
+                
+                <section class="modalCurrentIndex">
+                    <button class="modalCurrentIndex_button">Salvar</button>
+                   
+                </section>
             </section>
             
-            <section class="user_main-view red">
-               
+            <section class="user_main-view">
+               <section class="modelFixed-phone"></section>
             </section>
             
             
         </section>
-    </main>
 
-    <section class="modalTrash ">
-        <div class="modalTrash-text">Deseja deletar link</div>
-        <div class="modalTrash-confirm">
-            <button class="TrashNo">Cancelar</button>
-            <button class="deletcard">sim</button>
-        </div>
-    </section>
+        <section class="modalTrash">
+            <section class="nullTrash-hearder remove-ModalTrash"></section>
+            <section class="nullTrash-left remove-ModalTrash"></section>
+            <section class="nullTrash-right remove-ModalTrash"></section>
+            <section class="nullTrash-footer remove-ModalTrash"></section>
+            <section class="modalTrash-father">
+                <div class="modalTrash-text">Deseja deletar esse link?</div>
+                <div class="modalTrash-confirm">
+                    <button class="TrashNo buttonTrash">Cancelar</button>
+                    <button class="deletcard buttonTrash">sim</button>
+                </div>
+            </section>
+        
+        </section>
+
+
+    </main>
+    
 </body>
 </html>
 

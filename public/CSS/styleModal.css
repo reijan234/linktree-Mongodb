@@ -1,0 +1,69 @@
+.styleModal-father{
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.5);
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: grid;
+    grid-template-columns: auto 700px auto;
+    grid-template-rows: auto 500px auto;
+    grid-template-areas: 
+    'head3 head3 head3'
+    'left3 modelstyle right3'
+    'foote3 foote3 foote3'
+    ;
+
+}
+
+.styleModal-container{
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    border-radius: 8px;
+    grid-area: modelstyle;
+    display: flex;
+}
+
+.style-top{
+    grid-area: head3;
+}
+
+.style-rigth{
+    grid-area: right3;
+}
+
+.style-left{
+    grid-area: left3;
+}
+
+.style-bottom{
+    grid-area: foote3;
+}
+
+.style-Preview-container{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.edit-styles{
+    height: 33.33%;
+    width: 100%;
+}
+
+.style-title-container{
+    display: flex;
+    justify-content: center;
+}
+
+.style-Config-container{
+    width: 50%;
+    height: 100%;
+    background-color: #f4f6f9;
+}
+
+

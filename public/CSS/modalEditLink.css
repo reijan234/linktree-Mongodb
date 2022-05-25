@@ -1,0 +1,115 @@
+.Container-ModalEdit{
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.452);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: grid;
+    grid-template-columns: auto 500px auto;
+    grid-template-rows: auto 300px auto;
+    grid-template-areas: 
+    'hearder hearder hearder'
+    'left cardEdit right'
+    'footer footer footer'
+    ;
+}
+
+.ModalEdit-father{
+    max-width: 500px;
+    width: 100%;
+    height: 300px;
+    background-color: white;
+    border-radius: 8px;
+    grid-area: cardEdit;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.textEdit{
+    margin-top: 25px;
+}
+
+.ModalEdit-input{
+    width: 90%;
+    height: 40px;
+    padding-left: 8px;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+}
+
+.nameLink-ModalEdit{
+    margin-top: 20px;
+}
+
+.urlLink-ModalEdit{
+    margin-top: 10px;
+}
+
+.nullhearder{
+    grid-area: hearder;
+}
+
+.nullleft{
+    grid-area: left;
+}
+
+.nullright{
+    grid-area: right;
+}
+
+.nullfooter{
+    grid-area: footer;
+}
+
+.modalEditi_imageButtons{
+    width: 90%;
+    height: 110px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.modalEdit-uploadImg{
+    display: none;
+}
+
+.modal_image-label{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 110px;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+}
+
+.modal_image-label p{
+    width: 70px;
+}
+
+.imgModalEdit{
+    height: 110px;
+    width: 110px;
+    border-radius: 8px;
+    border: 1px black solid;
+    box-shadow: inset 10px 10px 10px 10px;
+}
+
+.imgModalEdit:hover{
+  
+}
+
+.modalEdit_buttons_Container button{
+    padding: 12px 14px;
+    border-radius: 8px;
+}
+
+.modalEdit_buttons_Container button:last-child{
+    margin-left: 10px;
+}
